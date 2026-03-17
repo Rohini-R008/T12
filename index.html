@@ -1,21 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compound Interest Calculator</title>
+    <title>Compound Interest</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <h1>Compound Interest Calculator</h1>
+    <h1>Compound Interest Calculator</h1>
 
-        <div class="box">
-            <button onclick="calculateCI()">Calculate</button>
-        </div>
+    <div class="container">
+
+        <label>Principal (P):</label>
+        <input type="number" id="principal">
+
+        <label>Rate of Interest (%) :</label>
+        <input type="number" id="rate">
+
+        <label>Compounding Frequency (n):</label>
+        <input type="number" id="frequency">
+
+        <label>Time (years):</label>
+        <input type="number" id="time">
+
+        <button onclick="calculateCI()">Calculate</button>
+
+        <div id="result"></div>
+
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>

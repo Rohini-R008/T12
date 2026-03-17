@@ -1,19 +1,31 @@
 function calculateCI() {
 
-    // Predefined values
-    let P = 10000;   // Principal
-    let r = 5;       // Rate (%)
-    let n = 1;       // Times compounded per year
-    let t = 3;       // Time (years)
+    // Get values from input fields
+    let P = document.getElementById("principal").value;
+    let r = document.getElementById("rate").value;
+    let n = document.getElementById("frequency").value;
+    let t = document.getElementById("time").value;
+
+    // Convert to numbers
+    P = parseFloat(P);
+    r = parseFloat(r);
+    n = parseFloat(n);
+    t = parseFloat(t);
+
+    // Validation
+    if (isNaN(P) || isNaN(r) || isNaN(n) || isNaN(t)) {
+        document.getElementById("result").innerText = "Please enter all values correctly";
+        return;
+    }
 
     // Convert rate to decimal
     r = r / 100;
 
-    // Formula: A = P(1 + r/n)^(nt)
+    // Apply formula
     let A = P * Math.pow((1 + r / n), (n * t));
-
-    // Compound Interest
     let CI = A - P;
 
-    console.log("The compound interest after " + t + " years is: " + CI.toFixed(2));
+    // Display result
+    document.getElementById("result").innerText =
+        "Compound Interest = " + CI.toFixed(2);
 }
